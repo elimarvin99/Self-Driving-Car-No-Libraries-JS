@@ -15,9 +15,9 @@ class Car{
         this.controls = new Controls();
     }
 
-    update(){
+    update(roadBorders){
         this.#move();
-        this.sensor.update();
+        this.sensor.update(roadBorders);
     }
 
     //this method draws the car on the canvas, with x being the center of the car that has height and width extending in both directions in pixels
