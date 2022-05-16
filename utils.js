@@ -19,6 +19,5 @@ function getIntersection(A, B, C, D){
             }  
         }
     }
-
     return null;
 }
