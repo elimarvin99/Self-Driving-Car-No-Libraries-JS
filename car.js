@@ -11,11 +11,13 @@ class Car{
         this.friction = 0.05;
         this.angle = 0;
 
+        this.sensor = new Sensor(this);
         this.controls = new Controls();
     }
 
     update(){
         this.#move();
+        this.sensor.update();
     }
 
     //this method draws the car on the canvas, with x being the center of the car that has height and width extending in both directions in pixels
@@ -34,6 +36,8 @@ class Car{
         ctx.fill();
 
         ctx.restore();
+
+        this.sensor.draw(ctx);
     }
     #move(){
         if(this.controls.forward){
